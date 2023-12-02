@@ -1,3 +1,7 @@
+# Coding Task
+<details>
+<summary>Details</summary>
+
 Let's say that we have a data collection system that requires the creation of models (entities) dynamically based on some csv files provided by the customers. We need to write a template parser that takes an array like the one below, with the type of data collection, and generates a model (entity) class file with the name of the file and path, class name, namespace and table name based on the params in the array: 
 
 ```php
@@ -42,3 +46,7 @@ This task shouldn't take more than 3 hours. Please let us know how long it takes
 Try to write the code as clean as possible. We'll evaluate the application of the relevant coding principles, the coding standards and how scalable, testable and readable the code is. 
 
 When you are done just create a private repo in your own github account and share it with us. Please provide a readme file with an explanation of your implementation and instructions on how to test that it works.
+</details>
+
+# Solution
+
