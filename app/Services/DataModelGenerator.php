@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Exceptions\InvalidModelParams;
 use App\Exceptions\ModelAlreadyExist;
 
-class DataModel
+class DataModelGenerator
 {
 
     const CLASS_NAME_REGEX = '/^[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff-]*$/';
@@ -79,14 +79,15 @@ class DataModel
 
         $class = implode('\\', [$this->namespace, $this->className]);
 
-        if (class_exists($class)) {
+        $path = __DIR__ . '/../../' . lcfirst(str_replace('\\', '/', $this->namespace));
+        $filePath = "{$path}/{$this->className}.php";
+
+        if (class_exists($class) || file_exists($filePath)) {
             throw new ModelAlreadyExist($class);
         }
 
-        $path = __DIR__ . '/../../' . lcfirst(str_replace('\\', '/', $this->namespace));
+        @mkdir($path, 0755, true);
 
-        mkdir($path, 0755, true);
-
-        return file_put_contents("{$path}/{$this->className}.php", $content);
+        return file_put_contents($filePath, $content);
     }
 }

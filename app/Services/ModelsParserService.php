@@ -10,7 +10,7 @@ class ModelsParserService
     public function __construct(array $modelData)
     {
         $this->modelClasses = array_map(function ($data){
-                return new DataModel($data['scope'], $data['string']);
+                return new DataModelGenerator($data['scope'], $data['string']);
         }, $modelData);
     }
 }
