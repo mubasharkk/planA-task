@@ -28,6 +28,7 @@ class ModelsParserService
     public function fromData(array $data): self
     {
         $this->modelClasses = array_map(function ($data) {
+            // An exception can be thrown here if there is problem with CSV data
             return new DataModelGenerator($data['scope'], $data['name']);
         }, $data);
 
@@ -37,7 +38,7 @@ class ModelsParserService
     public function generate(bool $log = true)
     {
         foreach ($this->modelClasses as $model) {
-            if ($log && $model->generate()) {
+            if ($model->generate() && $log) {
                 echo "Generated model {$model->getClassName()} successfully.\n";
             }
         }
