@@ -35,7 +35,7 @@ class DataModelGenerator
     ) {
         $this->namespace = $this->prepareNamespace($namespace);
         $this->className = $this->convertToCamelCase($className);
-        $this->tableName = str_replace('-', '_', $className);
+        $this->tableName = $className;
 
         // additional exception can be thrown here if template doesn't exist
         if ($template && file_exists(__DIR__."Templates/{$template}.txt")) {
