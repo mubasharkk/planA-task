@@ -45,7 +45,7 @@ class CSVModelServiceTest extends TestCase
 
         $this->assertFileExists(self::MODEL_DIR . 'Actors/ComedyFilms/CharlieChaplen.php');
         $this->assertFileExists(self::MODEL_DIR . 'Actors/ActionFilms/BradPit.php');
-        $this->assertFileExists(self::MODEL_DIR . 'Actors/ComedyFilms/Robin_Williams.php');
+        $this->assertFileExists(self::MODEL_DIR . 'Actors/ComedyFilms/Robin_williams.php');
         $this->assertFileExists(self::MODEL_DIR . 'Actors/Jacksparrow.php');
     }
 
