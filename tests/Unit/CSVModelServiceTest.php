@@ -74,6 +74,10 @@ class CSVModelServiceTest extends TestCase
             ->generate();
     }
 
+    /**
+     * This can be avoided by mocking the generate function
+     * I skipped it to have a real test result
+     */
     protected function tearDown(): void
     {
         $this->rrmdir(__DIR__.'/../../app/Models');

@@ -50,3 +50,43 @@ When you are done just create a private repo in your own github account and shar
 
 # Solution
 
+* The solution is built without using any framework.
+* Uses custom **PHP** with composer autoloader. 
+* Minimum requirement is **PHP 8**.
+* `illuminate/database` is only added for IDE display purpose, so it doesn't show any error. 
+* There is a test csv file added for initial execution and test case varification, you can change and test it as you
+  like. There is a assumption made for the scope array to be separated with a pipe char `|` .
+  * Example row: `indirect-emissions-owned|electricity,meeting-rooms`
+  * First row is calculated as headers.
+
+## Files
+Following are the files that contains the complete functionality:
+
+* [app/Services/DataModelGenerator.php](https://github.com/mubasharkk/planA-task/blob/main/app/Services/DataModelGenerator.php)
+  * Generates each ModelClass from a given template.
+* [app/Services/ModelsParserService.php](https://github.com/mubasharkk/planA-task/blob/main/app/Services/ModelsParserService.php)
+  * A service class that validates csv data & generate `DataModelGenerator` class objects.
+
+## Execution
+
+Installing composer for `phpunit` tests and autoload generation.
+
+```
+composer install
+```
+
+#### Executing index.php with dummy file `dataModels.csv`
+
+```
+php index.php
+```
+
+## Testing
+
+Solution uses `phpunit`.
+
+```
+./vendor/bin/phpunit tests/Unit/CSVModelServiceTest.php
+
+./vendor/bin/phpunit tests/Unit/DataModelTest.php
+```

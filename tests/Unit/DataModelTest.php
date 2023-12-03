@@ -64,6 +64,10 @@ class DataModelTest extends TestCase
         );
     }
 
+    /**
+     * This can be avoided by mocking the generate function
+     * I skipped it to have a real test result
+     */
     protected function tearDown(): void
     {
         @unlink(self::TEST_CLASS);
