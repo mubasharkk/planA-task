@@ -52,12 +52,15 @@ When you are done just create a private repo in your own github account and shar
 
 * The solution is built without using any framework.
 * Uses custom **PHP** with composer autoloader. 
-* Minimum requirement is **PHP 8**.
+* Minimum requirement is **PHP 8.2**.
 * `illuminate/database` is only added for IDE display purpose, so it doesn't show any error. 
-* There is a test csv file added for initial execution and test case varification, you can change and test it as you
+* There is a test csv file `dataModels.csv` added for initial execution and test case verification, you can change and test it as you
   like. There is a assumption made for the scope array to be separated with a pipe char `|` .
   * Example row: `indirect-emissions-owned|electricity,meeting-rooms`
-  * First row is calculated as headers.
+  * First row is considered as headers in the CSV file.
+* There are a things in the class `DataModelGenerator` that can be improved and 
+additional validation can be added. It is still extendable/scalable.
+* As the task is simple, I tried to keep it simple.
 
 ## Files
 Following are the files that contains the complete functionality:
@@ -90,3 +93,7 @@ Solution uses `phpunit`.
 
 ./vendor/bin/phpunit tests/Unit/DataModelTest.php
 ```
+
+### Git CI Workflow
+
+https://github.com/mubasharkk/planA-task/actions/workflows/php.yml
