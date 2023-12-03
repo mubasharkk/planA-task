@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebba591494a6c78da3072ccd24ce6d0b",
+    "content-hash": "5356a48847045c0500bda105cd10c262",
     "packages": [
         {
             "name": "brick/math",
@@ -621,12 +621,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "9051283ef6398c349ef1a5283f3d95c561115db3"
+                "reference": "87baf0e6ff475f2add18a9f5f839ea0a8178f533"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/9051283ef6398c349ef1a5283f3d95c561115db3",
-                "reference": "9051283ef6398c349ef1a5283f3d95c561115db3",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/87baf0e6ff475f2add18a9f5f839ea0a8178f533",
+                "reference": "87baf0e6ff475f2add18a9f5f839ea0a8178f533",
                 "shasum": ""
             },
             "require": {
@@ -721,7 +721,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-18T15:41:24+00:00"
+            "time": "2023-12-01T22:30:17+00:00"
         },
         {
             "name": "psr/clock",
@@ -3024,7 +3024,9 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=8.0"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
