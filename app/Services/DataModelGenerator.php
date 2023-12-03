@@ -37,12 +37,15 @@ class DataModelGenerator
         $this->className = $this->convertToCamelCase($className);
         $this->tableName = str_replace('-', '_', $className);
 
-        //        print_r([$this->namespace, $this->className, $this->tableName]);  die("\n");
-
         // additional exception can be thrown here if template doesn't exist
         if ($template && file_exists(__DIR__."Templates/{$template}.txt")) {
             $this->template = $template;
         }
+    }
+
+    public function getClassName(): string
+    {
+        return implode('\\', [$this->namespace, $this->className]);
     }
 
     private function prepareNamespace(array $namespace): string
@@ -77,7 +80,7 @@ class DataModelGenerator
             file_get_contents($this->template)
         );
 
-        $class = implode('\\', [$this->namespace, $this->className]);
+        $class = $this->getClassName();
 
         $path = __DIR__ . '/../../' . lcfirst(str_replace('\\', '/', $this->namespace));
         $filePath = "{$path}/{$this->className}.php";

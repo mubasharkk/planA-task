@@ -1,0 +1,7 @@
+scope,name
+indirect-emissions-owned|electricity,meeting-rooms
+indirect-emissions-owned|gas,conference-rooms
+direct-emissions-owned|electricity,coffee-machines
+carbon-fuel|super,consumption-levels
+carbon-fuel|e32,consumption-levels
+carbon-fuel|e32,origin-country
